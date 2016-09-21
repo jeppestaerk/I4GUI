@@ -1,0 +1,16 @@
+﻿<Window x:Class="Delopgave3_alternativ.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Delopgave 3 - alternativ" Height="700" Width="1024" 
+        Loaded="Window_Loaded" 
+        FontFamily="Lucida Console" 
+        FontSize="14"
+        >
+    <Grid>
+        <TextBlock Height="21" HorizontalAlignment="Left" Margin="14,10,0,0" Name="textBlock1" VerticalAlignment="Top" Width="120" FontWeight="Bold">Fornavn</TextBlock>
+        <TextBlock Height="21" HorizontalAlignment="Left" Margin="195,10,0,0" Name="textBlock2" VerticalAlignment="Top" Width="120" FontWeight="Bold">Efternavn</TextBlock>
+        <TextBlock Height="21" HorizontalAlignment="Left" Margin="370,10,0,0" Name="textBlock3" VerticalAlignment="Top" Width="120" FontWeight="Bold">Studienummer</TextBlock>
+        <TextBlock Height="21" HorizontalAlignment="Left" Margin="527,10,0,0" Name="textBlock4" VerticalAlignment="Top" Width="130" FontWeight="Bold">E-mail adresse</TextBlock>
+        <ListBox Margin="10,37,10,10" Name="lbxDeltagere" />
+    </Grid>
+</Window>
