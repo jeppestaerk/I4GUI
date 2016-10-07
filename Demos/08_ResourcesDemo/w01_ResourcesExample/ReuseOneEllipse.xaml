@@ -1,0 +1,20 @@
+﻿<Window x:Class="ResourcesExample.ReuseOneEllipse"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="ResourcesExample" Height="300" Width="300"
+    >
+
+  <!-- Example 12-16. Using a FrameworkElement resource -->
+  
+  <Window.Resources>
+    <Ellipse x:Key="shape" Fill="Blue" Width="100" Height="80" />
+  </Window.Resources>
+
+  <StackPanel>
+    <Button>Foo</Button>
+    <StaticResource ResourceKey="shape" />
+    <Button>Bar</Button>
+  </StackPanel>
+  
+  <!-- End of Example 12-16. -->
+</Window>

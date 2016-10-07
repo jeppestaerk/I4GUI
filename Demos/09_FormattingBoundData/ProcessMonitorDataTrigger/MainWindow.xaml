@@ -1,0 +1,57 @@
+﻿<Window x:Class="ProcessMonitorDataTrigger.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:diag="clr-namespace:System.Diagnostics;assembly=System"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:ProcessMonitorDataTrigger"
+        Title="Monitor with DataTrigger" Height="400" Width="500">
+    <Grid>
+        <Grid.Resources>
+            <ObjectDataProvider x:Key="processes" MethodName="GetProcesses" ObjectType="{x:Type diag:Process}"/>
+            <ObjectDataProvider x:Key="dateinfo" ObjectType="{x:Type system:DateTime}"/>
+            <local:NumberToFormattedTextValueConverter x:Key="numberToText" />
+            <local:IsLargeValueConverter x:Key="isLarge" />
+        </Grid.Resources>
+        <ListView Name="listView1" ItemsSource="{Binding Source={StaticResource processes}}" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel Name="wrapPanel1">
+                        <TextBlock Text="{Binding Path=Id}" MinWidth="80" />
+                        <TextBlock Text="{Binding Path=PriorityClass}" MinWidth="80" />
+                        <TextBlock Text="{Binding Path=ProcessName}" MinWidth="140" />
+
+                        <!--Using C# NumberToFormatedTextConverter-->
+                        <TextBlock MinWidth="100" 
+                                   TextAlignment="Right"
+                                   Text="{Binding Path=WorkingSet64, 
+                                                  Converter={StaticResource numberToText},
+                                                  ConverterParameter=SI}"
+                                   />
+                    </WrapPanel>
+                    <DataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding Path=PriorityClass}" Value="Idle">
+                            <Setter TargetName="wrapPanel1" Property="Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush>
+                                        <GradientStop Color="Salmon" Offset="0" />
+                                        <GradientStop Color="Salmon" Offset="0.4" />
+                                        <GradientStop Color="White" Offset="1" />
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=WorkingSet64,
+                                     Converter={StaticResource isLarge},ConverterParameter=40000000}"
+                                     Value="true" >
+                            <Setter TargetName="wrapPanel1" Property="Background">
+                                <Setter.Value>
+                                    <SolidColorBrush Color="RosyBrown" />
+                                </Setter.Value>
+                            </Setter>
+                        </DataTrigger>
+                    </DataTemplate.Triggers>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Window>

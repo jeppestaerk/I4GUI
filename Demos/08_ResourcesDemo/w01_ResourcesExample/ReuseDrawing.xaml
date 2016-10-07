@@ -1,0 +1,32 @@
+﻿<Window x:Class="ResourcesExample.ReuseDrawing"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="ResourcesExample" Height="300" Width="300"
+    >
+  
+  <!-- Example 12-18. Using a Drawing resource -->
+  
+  <Window.Resources>
+    <GeometryDrawing x:Key="drawing" Brush="Green">
+      <GeometryDrawing.Geometry>
+        <EllipseGeometry RadiusX="200" RadiusY="10" />
+      </GeometryDrawing.Geometry>
+    </GeometryDrawing>
+  </Window.Resources>
+
+  <StackPanel Orientation="Vertical">
+    <Rectangle Width="250" Height="50">
+      <Rectangle.Fill>
+        <DrawingBrush Drawing="{StaticResource drawing}" />
+      </Rectangle.Fill>
+    </Rectangle>
+    <Rectangle Width="250" Height="50">
+      <Rectangle.Fill>
+        <DrawingBrush Drawing="{StaticResource drawing}" />
+      </Rectangle.Fill>
+    </Rectangle>
+  </StackPanel>
+
+  <!-- End of Example 12-18. -->
+
+</Window>

@@ -1,0 +1,43 @@
+﻿<Window x:Class="ListBinding.BetterListBindingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:ListBinding"
+        xmlns:debug="clr-namespace:System.Diagnostics;assembly=WindowsBase"
+        Title="Better ListBinding"
+        Height="425"
+        Width="400">
+    <Window.Resources>
+        <local:People x:Key="family" />
+    </Window.Resources>
+    <Grid DataContext="{StaticResource family}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <ListBox Name="lbxPersons" Grid.Row="0" Grid.Column="1" 
+                 ItemsSource="{Binding debug:PresentationTraceSources.TraceLevel=High}" 
+                 DisplayMemberPath="Name"
+                 IsSynchronizedWithCurrentItem="True" 
+                 Margin="5">
+        </ListBox>
+        <TextBlock Grid.Row="1" Grid.Column="0" Margin="5" VerticalAlignment="Center">Name:</TextBlock>
+        <TextBox Grid.Row="1" Grid.Column="1" Margin="5" 
+                 Name="tbxName"
+                 Text="{Binding Path=Name}" />
+        <TextBlock Grid.Row="2" Grid.Column="0" Margin="5" VerticalAlignment="Center">Age:</TextBlock>
+        <TextBox Grid.Row="2" Grid.Column="1" Margin="5" Text="{Binding Path=Age}" />
+        <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
+            <Button Name="btnBirthday" Width="75" Margin="5">Birthday</Button>
+            <Button Name="btnBack" Width="75" Margin="5">&lt;</Button>
+            <Button Name="btnForward" Width="75" Margin="5">&gt;</Button>
+            <Button Name="btnAdd" Width="75" Margin="5" >Add</Button>
+        </StackPanel>
+    </Grid>
+</Window>

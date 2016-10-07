@@ -1,0 +1,24 @@
+﻿<Window x:Class="HeaderedContent.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <StackPanel>
+        <GroupBox Header="A GroupBox Test" 
+                  Padding="5"
+                  Margin="5" 
+                  VerticalAlignment="Top"
+                  >
+            <StackPanel>
+                <RadioButton Name="rb1" Checked="rbChecked" Margin="3" IsChecked="True" Content="One" />
+                <RadioButton Name="rb2" Checked="rbChecked" Margin="3" >Two</RadioButton>
+                <RadioButton Name="rb3" Checked="rbChecked" Margin="3">Three</RadioButton>
+            </StackPanel>
+        </GroupBox>
+        <Button Margin="5" Name="btnSave" Click="btnSave_Click">Save</Button>
+        <TextBox Name="tbxChoise" 
+                 Margin="5"
+                 IsReadOnly="True" />
+        </StackPanel>
+    </Grid>
+</Window>

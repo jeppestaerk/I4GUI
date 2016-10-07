@@ -1,0 +1,16 @@
+﻿<!-- Example 12-2. Populating a ResourceDictionary from XAML -->
+<Window x:Class="ResourcesExample.Window1" Title="Resources"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:s="clr-namespace:System;assembly=mscorlib">
+
+  <Window.Resources>
+    <SolidColorBrush x:Key="myBrush" Color="Green" />
+    <s:String x:Key="HW">Hello, world</s:String>
+  </Window.Resources>
+
+  <Grid x:Name="myGrid">
+  </Grid>
+</Window>
+
+<!-- End of Example 12-2. -->

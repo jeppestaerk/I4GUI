@@ -1,0 +1,81 @@
+﻿<!-- SettingsDialog.xaml -->
+<Window
+  x:Class="CustomDialogSample.SettingsDialog"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:local="clr-namespace:CustomDialogSample" 
+  Title="Settings"
+  Height="240"
+  Width="400"
+  ResizeMode="CanResizeWithGrip"
+  WindowStartupLocation="CenterOwner"
+  FocusManager.FocusedElement="{Binding ElementName=reportFolderTextBox}"
+  ShowInTaskbar="False">
+  <Window.Resources>
+    <Style TargetType="Label">
+      <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    <Style TargetType="TextBox">
+      <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    <Style TargetType="Button">
+      <Setter Property="Margin" Value="10" />
+      <Setter Property="Padding" Value="5,2" />
+    </Style>
+  </Window.Resources>
+  <Grid>
+
+    <Grid.Resources>
+      <SolidColorBrush x:Key="reportBrush" Color="{Binding ReportColor}" />
+    </Grid.Resources>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto" />
+      <ColumnDefinition />
+      <ColumnDefinition Width="Auto" />
+    </Grid.ColumnDefinitions>
+
+    <!-- 1st row: report folder setting  -->
+    <Label Grid.Row="0" Grid.Column="0" Target="{Binding ElementName=reportFolderTextBox}">Report _Folder</Label>
+    <TextBox Grid.Row="0" Grid.Column="1" Name="reportFolderTextBox"
+      ToolTip="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}">
+      <TextBox.Text>
+        <Binding Path="ReportFolder">
+          <Binding.ValidationRules>
+            <local:FolderMustExist />
+          </Binding.ValidationRules>
+        </Binding>
+      </TextBox.Text>
+    </TextBox>
+    <Button Grid.Row="0" Grid.Column="2" Name="folderBrowseButton">...</Button>
+
+    <!-- 2nd row: report color setting -->
+    <Button Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Name="reportColorButton" Background="{DynamicResource reportBrush}">
+      Report _Color...
+    </Button>
+
+    <!-- 3rd row: reporter setting -->
+    <Label Grid.Row="2" Grid.Column="0" Target="{Binding ElementName=reporterTextBox}">_Reporter</Label>
+    <TextBox Grid.Row="2" Grid.Column="1" Name="reporterTextBox"
+      ToolTip="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}">
+      <TextBox.Text>
+        <Binding Path="Reporter">
+          <Binding.ValidationRules>
+            <local:NonZeroLength />
+          </Binding.ValidationRules>
+        </Binding>
+      </TextBox.Text>
+    </TextBox>
+
+    <!-- 4th row: buttons -->
+    <StackPanel Grid.Row="3" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+      <Button Name="applyButton" Width="72" IsDefault="True">Apply</Button>
+      <Button Name="closeButton" Width="72" IsCancel="True">Close</Button>
+    </StackPanel>
+  </Grid>
+</Window>

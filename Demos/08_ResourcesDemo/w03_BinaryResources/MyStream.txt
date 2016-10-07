@@ -1,0 +1,4 @@
+Dette er linie 1.
+This is a text file, embedded as an assembly manifest resource.
+Her er linie 3!!!
+Slut

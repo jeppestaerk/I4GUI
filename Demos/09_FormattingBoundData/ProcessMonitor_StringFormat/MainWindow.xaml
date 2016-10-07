@@ -1,0 +1,40 @@
+﻿<Window x:Class="ProcessMonitor_StringFormat.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:diag="clr-namespace:System.Diagnostics;assembly=System"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        Title="Monitor utilizing StringFormat" Height="400" Width="600">
+    <Grid>
+        <Grid.Resources>
+            <ObjectDataProvider x:Key="processes" MethodName="GetProcesses" ObjectType="{x:Type diag:Process}"/>
+            <ObjectDataProvider x:Key="dateinfo" ObjectType="{x:Type system:DateTime}"/>
+        </Grid.Resources>
+        <ListBox Name="ltvProcesses" ItemsSource="{Binding Source={StaticResource processes}}" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock MinWidth="40"
+                                   TextAlignment="Right"
+                                   Text="{Binding Path=Id}" 
+                                   />
+                        <TextBlock MinWidth="20"
+                                   Text=" " 
+                                   />
+
+                        <TextBlock Text="{Binding Path=StartTime, StringFormat=t}" MinWidth="80"/>
+
+                        <TextBlock MinWidth="200"
+                                   Text="{Binding Path=ProcessName,
+                                                  StringFormat=process {0}
+                                         }" 
+                                   />
+
+                        <TextBlock Text="{Binding Path=WorkingSet, StringFormat=\{0:N0\} bytes}"/>
+
+
+                    </WrapPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>

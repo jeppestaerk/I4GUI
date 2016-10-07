@@ -1,0 +1,52 @@
+﻿<Window x:Class="ColorConverter.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="clr-namespace:ColorConverter"
+    Title="Colors" Height="300" Width="300">
+	<Window.Resources>
+		<local:ColorMultiConverter x:Key="colorConverter"/>
+		<local:ColorNameValueConverter x:Key="colorNameConverter"/>
+	</Window.Resources>
+	<Grid>
+		<Label Height="23" Margin="14,15,0,0" Name="label1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="39">Red:</Label>
+		<Slider Height="23" Margin="58,17,12,0" Name="redSlider" VerticalAlignment="Top" Maximum="255" />
+		<Label Height="23" Margin="14,43,0,0" Name="label2" VerticalAlignment="Top" HorizontalAlignment="Left" Width="48">Green:</Label>
+		<Slider Height="23" Margin="58,45,12,0" Name="greenSlider" VerticalAlignment="Top" Maximum="255" />
+		<Label Height="23" Margin="14,71,0,0" Name="label3" VerticalAlignment="Top" HorizontalAlignment="Left" Width="39">Blue:</Label>
+		<Slider Height="23" Margin="58,73,12,0" Name="blueSlider" VerticalAlignment="Top" Maximum="255" />
+		<Border Margin="19,101,12,16" BorderThickness="1" BorderBrush="Black">
+			<Grid Name="colorBlock" >
+				<Grid.Background>
+					<SolidColorBrush>
+						<SolidColorBrush.Color>
+							<MultiBinding Converter="{StaticResource colorConverter}">
+								<Binding ElementName="redSlider" Path="Value"/>
+								<Binding ElementName="greenSlider" Path="Value"/>
+								<Binding ElementName="blueSlider" Path="Value"/>
+							</MultiBinding>
+						</SolidColorBrush.Color>
+					</SolidColorBrush>
+				</Grid.Background>
+				<Label Name="label4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" >
+					<Label.Foreground>
+						<SolidColorBrush>
+							<SolidColorBrush.Color>
+								<MultiBinding Converter="{StaticResource colorConverter}" ConverterParameter="inverse">
+									<Binding ElementName="redSlider" Path="Value"/>
+									<Binding ElementName="greenSlider" Path="Value"/>
+									<Binding ElementName="blueSlider" Path="Value"/>
+								</MultiBinding>
+							</SolidColorBrush.Color>
+						</SolidColorBrush>
+					</Label.Foreground>
+					<Label.Content>
+						<PriorityBinding FallbackValue="Unknown">
+							<Binding ElementName="colorBlock" Path="Background.Color" Converter="{StaticResource colorNameConverter}"/>
+							<Binding ElementName="colorBlock" Path="Background.Color"/>
+						</PriorityBinding>
+					</Label.Content>
+				</Label>
+			</Grid>
+		</Border>
+	</Grid>
+</Window>

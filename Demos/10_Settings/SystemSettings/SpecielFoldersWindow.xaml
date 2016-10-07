@@ -1,0 +1,19 @@
+﻿<Window x:Class="SystemSettings.SpecielFoldersWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:SystemSettings"
+        Title="SpecielFoldersWindow" Height="600" Width="800">
+    <Grid>
+        <ListBox Name="specialFoldersListBox">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock Text="{Binding Path=FolderName}" MinWidth="200"/>
+                        <TextBlock Text="{Binding Path=Path}"/>
+                    </WrapPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+
+        </ListBox>
+    </Grid>
+</Window>

@@ -1,0 +1,25 @@
+﻿<Window x:Class="ElementBinding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Element to Element Binding" Height="350" Width="525"
+        >
+    <StackPanel Margin="5">
+
+        <Slider Name="sliderFontSize" Margin="3" Minimum="5" Maximum="40" Value="10" 
+            TickFrequency="1" IsSnapToTickEnabled="True" TickPlacement="TopLeft">
+        </Slider>
+
+        <TextBlock Margin="10" Name="tblSampleText" 
+           FontSize="{Binding ElementName=sliderFontSize, Path=Value, Mode=TwoWay}"
+           Text="Simple Text">
+        </TextBlock>
+
+        <StackPanel Orientation="Horizontal" Margin="5">
+            <TextBlock VerticalAlignment="Center" xml:space="preserve">Exact Size:  </TextBlock>
+            <TextBox Text="{Binding ElementName=tblSampleText, Path=FontSize, 
+                     Mode=TwoWay }" 
+                     Width="100">
+            </TextBox>
+        </StackPanel>
+    </StackPanel>
+</Window>

@@ -1,0 +1,22 @@
+﻿<Window x:Class="ResourcesExample.ReuseTwoEllipses"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="ResourcesExample" Height="300" Width="300"
+    >
+
+  <!-- Example 12-17. Disabling sharing -->
+  
+  <Window.Resources>
+    <Ellipse x:Key="shape" Fill="Blue" Width="100" Height="80"
+             x:Shared="False" />
+  </Window.Resources>
+
+  <StackPanel>
+    <Button>Foo</Button>
+    <StaticResource ResourceKey="shape" />
+    <StaticResource ResourceKey="shape" />
+    <Button>Bar</Button>
+  </StackPanel>
+
+  <!-- End of Example 12-17. -->
+</Window>

@@ -1,0 +1,13 @@
+﻿<Window x:Class="_03_DynamicResourcesInXAML.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Dynamic Resources In XAML" Height="300" Width="300">
+    <Window.Resources>
+        <SolidColorBrush x:Key="myBrush" Color="Green" />
+    </Window.Resources>
+    <Grid Background="{DynamicResource myBrush}" >
+        <Button Content="Click Me" Click="Button_Click"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"/>
+    </Grid>
+</Window>

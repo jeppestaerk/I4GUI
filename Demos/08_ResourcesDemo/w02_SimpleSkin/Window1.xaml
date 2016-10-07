@@ -1,0 +1,22 @@
+﻿<!-- Example 12-24. Window1.xaml—switching skins -->
+
+<Window x:Class="SimpleSkin.Window1" Title="SimpleSkin"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  Background="{DynamicResource appBackground}">
+
+  <Grid Margin="1">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+
+    <RadioButton x:Name="chooseGreenSkin" Grid.Row="0" Content="Green" />
+    <RadioButton x:Name="chooseBlueSkin" Grid.Row="1" Content="Blue" />
+
+    <Button Grid.Row="2">Hello</Button>
+  </Grid>
+</Window>
+
+<!-- End of Example 12-24. -->

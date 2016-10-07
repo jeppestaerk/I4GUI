@@ -1,0 +1,11 @@
+﻿Kommentarer til Settings Lab.
+=============================
+
+Jeg har brugt data binding fra kontrollerne direkte til properties i setttingsklassen. Dette sparer
+en del kode. For at XAML-koden kan finde propertiesklassen, er der defineret en resource i App.xaml: 
+<properties:Settings x:Key="Settings" /> I dette eksempel kunne den i stedet havde været erklæret i 
+MainWindow, men ofte er det en fordel at gøre det i App.xaml, da resourcen derved er tilgængelig 
+for alle vinduerne i applicationen.
+
+Settings bliver gemt i en Application_Exit event-handler. og i Application_Startup kaldes Upgrade,
+hvis det er første programkørsel efter en rebuild (ny version).

@@ -1,0 +1,17 @@
+﻿<Window x:Class="SystemSettings.SystemInformationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SystemInformationWindow" Height="400" Width="600">
+    <Grid>
+        <ListBox Name="systemInfoListBox">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock Text="{Binding Path=PropertyName}" MinWidth="200"/>
+                        <TextBlock Text="{Binding Path=Value}"/>
+                    </WrapPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>

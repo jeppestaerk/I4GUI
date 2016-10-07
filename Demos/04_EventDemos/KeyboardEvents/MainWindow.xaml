@@ -1,0 +1,58 @@
+﻿<Window x:Class="KeyboardEvents.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Examine Keystrokes" Height="400" Width="800"
+        WindowState="Maximized"
+        FontSize="14">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <WrapPanel>
+        <TextBlock Name="Heading"
+                   FontWeight="Bold"
+                   Text="Press a key to see what events it generates."
+                   VerticalAlignment="Center"
+                   Padding="5"
+                   />
+            <Button Name="btnClear"
+                    Content="Clear"
+                    FontWeight="ExtraBold"
+                    Margin="30, 5"
+                    Click="btnClear_Click"
+                    />
+        </WrapPanel>
+        <ListView Name="lviEvents" Grid.Row="1">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="120" Header="Event" 
+                                    DisplayMemberBinding="{Binding Event}"  />
+                    <GridViewColumn Width="100" Header="Key"  
+                                    DisplayMemberBinding="{Binding Key}" />
+                    <GridViewColumn Width="70" Header="Sys-Key" 
+                                    DisplayMemberBinding="{Binding SystemKey}" />
+                    <GridViewColumn Width="70" Header="Text" 
+                                    DisplayMemberBinding="{Binding Text}" />
+                    <GridViewColumn Width="70" Header="Ctrl-Text" 
+                                    DisplayMemberBinding="{Binding ControlText}" />
+                    <GridViewColumn Width="70" Header="Sys-Text" 
+                                    DisplayMemberBinding="{Binding SystemText}" />
+                    <GridViewColumn Width="70" Header="Ime" 
+                                    DisplayMemberBinding="{Binding Ime}" />
+                    <GridViewColumn Width="120" Header="KeyStates" 
+                                    DisplayMemberBinding="{Binding KeyStates}" />
+                    <GridViewColumn Width="70" Header="IsDown" 
+                                    DisplayMemberBinding="{Binding IsDown}" />
+                    <GridViewColumn Width="70" Header="IsUp" 
+                                    DisplayMemberBinding="{Binding IsUp}" />
+                    <GridViewColumn Width="70" Header="IsToggled" 
+                                    DisplayMemberBinding="{Binding IsToggled}" />
+                    <GridViewColumn Width="70" Header="IsRepeat" 
+                                    DisplayMemberBinding="{Binding IsRepeat}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+</Window>

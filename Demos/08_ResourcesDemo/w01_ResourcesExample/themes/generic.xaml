@@ -1,0 +1,33 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ResourcesExample"
+    >
+
+  <!-- Example 12-11. Style using a Type object as key -->
+
+    <Style TargetType="{x:Type local:MyCustomControl}">
+      
+  <!-- End of Example 12-11. -->
+      
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:MyCustomControl}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+  <!-- Example 12-12. Naming custom system-scope resources -->
+  
+  <SolidColorBrush x:Key="{ComponentResourceKey {x:Type local:MyCustomType},
+                               myBrush}" />
+
+  <!-- End of Example 12-12. -->
+
+</ResourceDictionary>

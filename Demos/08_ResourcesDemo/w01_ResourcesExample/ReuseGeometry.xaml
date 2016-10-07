@@ -1,0 +1,25 @@
+﻿<Window x:Class="ResourcesExample.ReuseGeometry"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="ResourcesExample" Height="300" Width="300"
+    >
+  
+  <!-- Example 12-20. Using a Geometry resource -->
+  <Window.Resources>
+    <EllipseGeometry x:Key="geom" RadiusX="200" RadiusY="30" />
+  </Window.Resources>
+
+
+  <Rectangle Width="250" Height="50">
+    <Rectangle.Fill>
+      <DrawingBrush>
+        <DrawingBrush.Drawing>
+          <GeometryDrawing Brush="Cyan" Geometry="{StaticResource geom}" />
+        </DrawingBrush.Drawing>
+      </DrawingBrush>
+    </Rectangle.Fill>
+  </Rectangle>
+
+  <!-- End of Example 12-20. -->
+
+</Window>

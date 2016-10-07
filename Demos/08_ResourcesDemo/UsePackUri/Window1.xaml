@@ -1,0 +1,19 @@
+﻿<Window x:Class="UsePackUri.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="UsePackUri" Height="300" Width="300"
+    >
+
+  <!-- Example 12-33. Relative pack URI referring to external component -->
+<StackPanel>
+  <StackPanel.Resources>
+    <ResourceDictionary Source="/PresentationFramework.Luna;v3.0.0.0;31bf3856ad364e35;component/themes/luna.normalcolor.xaml" />
+  </StackPanel.Resources>
+
+  <Button Content="Luna" />
+  <CheckBox Content="Theme" />
+</StackPanel>
+
+<!-- End of Example 12-33 -->
+
+</Window>

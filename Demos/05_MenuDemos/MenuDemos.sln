@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01MenuDemo", "MenuDemo\01MenuDemo.csproj", "{125276D7-117D-47DA-8967-B84A319B63C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02ToolbarDemo", "ToolbarDemo\02ToolbarDemo.csproj", "{64951A8C-72FC-42D4-911C-AF51902DDEFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03ToolbarTrayDemo", "ToolbarTrayDemo\03ToolbarTrayDemo.csproj", "{3390B78F-2F66-4F42-B55F-F1AD49EAFED6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05ProportionalStatusBar", "ProportionalStatusBar\05ProportionalStatusBar.csproj", "{EB7D523D-DFBA-4C8D-B757-3797D749A859}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04StatusbarDemo", "StatusbarDemo\04StatusbarDemo.csproj", "{C9C9A1FE-42AE-47E3-90D4-CCCBEA413E2E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{125276D7-117D-47DA-8967-B84A319B63C8}.Debug|x86.ActiveCfg = Debug|x86
+		{125276D7-117D-47DA-8967-B84A319B63C8}.Debug|x86.Build.0 = Debug|x86
+		{125276D7-117D-47DA-8967-B84A319B63C8}.Release|x86.ActiveCfg = Release|x86
+		{125276D7-117D-47DA-8967-B84A319B63C8}.Release|x86.Build.0 = Release|x86
+		{64951A8C-72FC-42D4-911C-AF51902DDEFC}.Debug|x86.ActiveCfg = Debug|x86
+		{64951A8C-72FC-42D4-911C-AF51902DDEFC}.Debug|x86.Build.0 = Debug|x86
+		{64951A8C-72FC-42D4-911C-AF51902DDEFC}.Release|x86.ActiveCfg = Release|x86
+		{64951A8C-72FC-42D4-911C-AF51902DDEFC}.Release|x86.Build.0 = Release|x86
+		{3390B78F-2F66-4F42-B55F-F1AD49EAFED6}.Debug|x86.ActiveCfg = Debug|x86
+		{3390B78F-2F66-4F42-B55F-F1AD49EAFED6}.Debug|x86.Build.0 = Debug|x86
+		{3390B78F-2F66-4F42-B55F-F1AD49EAFED6}.Release|x86.ActiveCfg = Release|x86
+		{3390B78F-2F66-4F42-B55F-F1AD49EAFED6}.Release|x86.Build.0 = Release|x86
+		{EB7D523D-DFBA-4C8D-B757-3797D749A859}.Debug|x86.ActiveCfg = Debug|x86
+		{EB7D523D-DFBA-4C8D-B757-3797D749A859}.Debug|x86.Build.0 = Debug|x86
+		{EB7D523D-DFBA-4C8D-B757-3797D749A859}.Release|x86.ActiveCfg = Release|x86
+		{EB7D523D-DFBA-4C8D-B757-3797D749A859}.Release|x86.Build.0 = Release|x86
+		{C9C9A1FE-42AE-47E3-90D4-CCCBEA413E2E}.Debug|x86.ActiveCfg = Debug|x86
+		{C9C9A1FE-42AE-47E3-90D4-CCCBEA413E2E}.Debug|x86.Build.0 = Debug|x86
+		{C9C9A1FE-42AE-47E3-90D4-CCCBEA413E2E}.Release|x86.ActiveCfg = Release|x86
+		{C9C9A1FE-42AE-47E3-90D4-CCCBEA413E2E}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

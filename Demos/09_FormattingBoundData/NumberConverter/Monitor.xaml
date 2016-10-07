@@ -1,0 +1,52 @@
+﻿<Window x:Class="NumberConverter.Monitor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:diag="clr-namespace:System.Diagnostics;assembly=System"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:NumberConverter"
+        Title="Monitor with NumberConverter" Height="400" Width="500">
+    <Grid>
+        <Grid.Resources>
+            <ObjectDataProvider x:Key="processes" MethodName="GetProcesses" ObjectType="{x:Type diag:Process}"/>
+            <ObjectDataProvider x:Key="dateinfo" ObjectType="{x:Type system:DateTime}"/>
+            <local:NumberToFormattedTextValueConverter x:Key="numberToText" />
+            <local:DateTimeValueConverter x:Key="dateTimeToText" />
+        </Grid.Resources>
+        <ListBox Name="listView1" ItemsSource="{Binding Source={StaticResource processes}}" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock MinWidth="40"
+                                   TextAlignment="Right"
+                                   Text="{Binding Path=Id}" 
+                                   />
+                        <TextBlock MinWidth="20"
+                                   Text=" " 
+                                   />
+
+                        <!--Using C# DateTimeConverter-->
+                        <TextBlock Text="{Binding Path=StartTime, 
+                            Converter={StaticResource dateTimeToText},
+                            ConverterParameter=T
+                            }" MinWidth="60"/>
+
+                        <TextBlock MinWidth="200"
+                                   Text="{Binding Path=ProcessName,
+                                                  StringFormat=Process \{0\}}" 
+                                   />
+
+                        <!--Using C# NumberToFormatedTextConverter-->
+                        <TextBlock MinWidth="100" 
+                                   TextAlignment="Right"
+                                   Text="{Binding Path=WorkingSet64, 
+                                                  Converter={StaticResource numberToText},
+                                                  ConverterParameter=IEC}"
+                                   />
+
+                    </WrapPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>
+

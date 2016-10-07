@@ -1,0 +1,11 @@
+﻿<Window x:Class="BinaryResources.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="BinaryResources" Height="300" Width="300"
+    >
+    <Grid>
+    
+      <Image Source="images/wheel.jpg" />
+
+    </Grid>
+</Window>
