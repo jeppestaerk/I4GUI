@@ -1,0 +1,32 @@
+﻿<Window x:Class="Opgave1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Opgave1"
+        mc:Ignorable="d"
+        Title="Hull Speed" Height="350" Width="525">
+    <Grid>
+        <StackPanel x:Name="mainPanel" HorizontalAlignment="Left" Height="299" Margin="10,10,0,0" VerticalAlignment="Top" Width="497" Orientation="Horizontal">
+            <StackPanel x:Name="propPanel" Width="297">
+                <WrapPanel Margin="0,3">
+                    <Label x:Name="labeName" Content="Name:" Height="26" Width="73.5"/>
+                    <TextBox x:Name="textBoxName" Height="26" TextWrapping="Wrap" Width="200" VerticalContentAlignment="Center"/>
+                </WrapPanel>
+                <WrapPanel Margin="0,3">
+                    <Label x:Name="labelLenght" Content="Lenght:" Width="73.5" Height="26"/>
+                    <TextBox x:Name="textBoxLenght" Height="26" TextWrapping="Wrap" Width="150" VerticalContentAlignment="Center"/>
+                    <Label x:Name="labelFeet" Content="feet" Height="26"/>
+                </WrapPanel>
+                <Button x:Name="buttonCalculate" Content="Calculate Hull Speed" Width="150" Height="26" Margin="0,3" Click="buttonCalculate_Click" IsDefault="True"/>
+                <WrapPanel Height="26" Margin="0,3">
+                    <Label x:Name="labelHullSpeed" Content="Hull speed:" Height="26" Width="73.5"/>
+                    <TextBlock x:Name="textResult" TextWrapping="Wrap" Width="50" Height="26" ScrollViewer.VerticalScrollBarVisibility="Disabled" MaxWidth="50" MaxHeight="26" MinWidth="50" MinHeight="26" TextAlignment="Right" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+                    <Label x:Name="labelKnots" Content="knots" Height="26"/>
+                    </WrapPanel>
+            </StackPanel>
+            <Image x:Name="image" Source="Sailboat.jpg" Height="299" HorizontalAlignment="Right"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

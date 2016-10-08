@@ -51,7 +51,7 @@
                            />
             </WrapPanel>
         </StackPanel>
-        <Image Source="/Lab3_1;component/Sailboat.jpg" 
+        <Image Source="/Sailboat.jpg" 
                Margin="10, 0"
                MouseDown="Image_MouseDown"
                />

@@ -80,7 +80,7 @@
         </Grid>
         <Grid Grid.Column="1">
             <Image 
-               Margin="10, 10" Source="/Lab2;component/Images/Sailboat.jpg" />
+               Margin="10, 10" Source="Images/Sailboat.jpg" />
         </Grid>
     </Grid>
 </Window>

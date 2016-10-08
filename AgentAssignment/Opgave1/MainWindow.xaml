@@ -1,0 +1,35 @@
+﻿<Window x:Class="Opgave1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Opgave1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid x:Name="mainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="117*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="200*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="169*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="labelId" Content="ID:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelCodeName" Content="CodeName:" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label x:Name="labelSpeciality" Content="Speciality:" HorizontalAlignment="Left" Margin="10,10,0,14" Grid.Row="2" VerticalAlignment="Top"/>
+        <Label x:Name="labelAssignment" Content="Assignment:" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="3" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBoxId" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MinHeight="26" MinWidth="100" VerticalContentAlignment="Center" Text="{Binding ID}"/>
+        <TextBox x:Name="textBoxCodeName" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="175" MinHeight="26" VerticalContentAlignment="Center" Text="{Binding CodeName}"/>
+        <TextBox x:Name="textBoxSpeciality" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="175" MinHeight="26" VerticalContentAlignment="Center" Text="{Binding Speciality}"/>
+        <TextBox x:Name="textBoxAssignment" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="175" MinHeight="130" Text="{Binding Assignment}"/>
+        <Label x:Name="labelId2" Content="{Binding ID}" Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" MinWidth="150" MinHeight="26"/>
+        <Label x:Name="labelCodeName2" Content="{Binding CodeName}" Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" MinWidth="150" MinHeight="25"/>
+        <Label x:Name="labelSpeciality2" Content="{Binding Speciality}" Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" MinWidth="150" MinHeight="26"/>
+        <Label x:Name="labelAssignment2" Content="{Binding Assignment}" Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="3" VerticalAlignment="Top" MinWidth="150" MinHeight="130"/>
+
+    </Grid>
+</Window>
